@@ -22,8 +22,10 @@ jobs:
           npm install
           npm install @capacitor/android
           
-      - name: Build Android App
+      - name: Add Android Platform and Build
         run: |
+          # အကယ်၍ android folder မရှိရင် ပြန်ထည့်ပေးဖို့ဖြစ်ပါတယ်
+          npx cap add android || true
           npx cap sync android
           cd android
           chmod +x gradlew
